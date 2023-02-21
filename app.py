@@ -3,6 +3,7 @@ from gtts import gTTS
 
 app = Flask(__name__,template_folder='templates')
 
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -24,4 +25,4 @@ def generate():
     return send_file('output.mp3', as_attachment=True)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,host='127.0.0.1'port=5000)
